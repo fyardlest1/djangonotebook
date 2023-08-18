@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page_title }}</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+    
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title|capfirst }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% if user.is_authenticated %}
+        <p>You are logged in.</p>
+    {% else %}
+        <p>Please log in to view more content.</p>
+    {% endif %}
+</body>
+</html>
